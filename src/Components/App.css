@@ -1,0 +1,39 @@
+.App {
+  text-align: left;
+}
+
+.AppBody {
+  font-family: Arial;
+  padding: 20px;
+  background: white;
+}
+
+.AppSection {
+  font-family: Arial;
+  background: #f3f3f3;
+  color: black;
+  margin-bottom: 20px;
+}
+
+.AppHeader {
+  padding: 5px;
+  padding-left: 10px;
+  background: #666666;
+  color: white;
+}
+
+.AppFooter {
+  padding: 5px;
+  padding-left: 10px;
+  background: lightgray;
+  margin-top: 10px;
+  color: gray;
+}
+
+table {
+  background-color: white;
+}
+
+.right-justified {
+  text-align: right;
+}
