@@ -1,0 +1,49 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: react-project-base
+  annotations:
+  labels:
+    app.kubernetes.io/name: base
+    helm.sh/chart: base-1.1.3
+    app.kubernetes.io/instance: react-project
+    app: react-project
+    app.openshift.io/runtime: js
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: base
+      app.kubernetes.io/instance: react-project
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: base
+        app.kubernetes.io/instance: react-project
+    spec:
+      containers:
+        - name: base
+          image: "replace:replace"
+          imagePullPolicy: IfNotPresent
+
+          ports:
+            - name: http
+              containerPort: 8080
+              protocol: TCP
+          livenessProbe:
+            httpGet:
+              path: /
+              port: http
+          readinessProbe:
+            httpGet:
+              path: /
+              port: http
+          env:
+            - name: INGRESS_HOST
+              value: ""
+            - name: PROTOCOLS
+              value: ""
+            - name: LOG_LEVEL
+              value: "debug"
+          resources:
+            null
